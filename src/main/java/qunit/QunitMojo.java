@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Says "Hi" to the user.
+ * Run the tests.
  *
  */
 @Mojo(name = "test")
@@ -39,7 +39,6 @@ public class QunitMojo extends AbstractMojo
 
     private File sourceDirectory;
     private File testSourceDirectory;
-
     private List<File> tests;
 
     public void execute() throws MojoExecutionException
@@ -56,6 +55,13 @@ public class QunitMojo extends AbstractMojo
             getLog().info("No tests found to execute at " + testSourceDirectory);
         } else {
             getLog().info(tests.size() + " test(s) found to execute");
+            // somehow get dependencies onto the path
+
+            // start q
+
+            // run each test and capture output (csv? / stdout?)
+
+            // return results in junit form
         }
     }
 

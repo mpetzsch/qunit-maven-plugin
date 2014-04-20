@@ -2,8 +2,10 @@ package qunit;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.plugins.annotations.ResolutionScope;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -15,7 +17,7 @@ import java.util.List;
  * Run the tests.
  *
  */
-@Mojo(name = "test")
+@Mojo(name="test",defaultPhase= LifecyclePhase.TEST,requiresDependencyResolution = ResolutionScope.TEST)
 public class QunitMojo extends AbstractMojo
 {
     /**
